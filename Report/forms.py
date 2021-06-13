@@ -8,3 +8,9 @@ class AddStaffForm(forms.ModelForm):
   class Meta:
     model = Staff
     fields = ['staff_name','designation','salary']
+
+class SendEmailForm(forms.Form):
+  email = forms.EmailField()
+
+  class Meta:
+    fields = ['email']

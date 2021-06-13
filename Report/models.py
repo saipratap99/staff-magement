@@ -9,3 +9,11 @@ class Staff(models.Model):
 
   def __str__(self):
     return self.staff_name
+
+  @staticmethod
+  def getDetails():
+    txt = ""
+    staff_details = Staff.objects.all()
+    for staff in staff_details:
+      txt += "{0}  {1}   {2}   {3}\n".format(staff.staff_id,staff.staff_name,staff.designation,staff.salary)
+    return txt
